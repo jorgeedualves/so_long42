@@ -16,7 +16,7 @@ HEADERS = src/so_long.h
 
 INCLUDE_DIR = includes
 
-SRC_FILES = main.c read_map.c print_map.c
+SRC_FILES = so_long.c read_map.c print_map.c map_utils.c init_game.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

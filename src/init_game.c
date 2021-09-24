@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_map.c                                        :+:      :+:    :+:   */
+/*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 18:25:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/24 16:03:06 by joeduard         ###   ########.fr       */
+/*   Created: 2021/09/24 17:03:50 by joeduard          #+#    #+#             */
+/*   Updated: 2021/09/24 18:33:25 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    print_map(char **map)
+void init_game(t_game *game)
 {
-    while (*map)
-        printf("%s\n", *map++);
+    game->img = 0;
+    game->mlx = 0;
+    game->win_height = 0;
+    game->win_width = 0;
 }
-
-
-//map = jorge
-// *map  = [jorge]  
-// map[i]  = [jorge]
-// &map = [safdas]
