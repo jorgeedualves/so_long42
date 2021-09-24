@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 11:16:40 by joeduard          #+#    #+#             */
-/*   Updated: 2021/05/17 11:16:40 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/09/23 17:03:42 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+
+# define OPEN_MAX 256
+# define BUFFER_SIZE 128
 
 /*
 ** Part one - Libc functions
@@ -61,6 +64,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_get_next_line(int fd, char **line);
+void	ft_super_free(void **ptr);
 
 /*
 ** Bonus Part

@@ -1,54 +1,61 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/17 11:18:03 by joeduard          #+#    #+#              #
-#    Updated: 2021/05/17 11:18:03 by joeduard         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = so_long
+IMG_DIR = assets/img
+XPM_DIR = textures
 
-NAME = libft.a
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
+MLX_DIR = mlx_linux
+MLX = $(MLX_DIR)/libmlx.a
 
-SRC  =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
- 		ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c \
- 		ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c \
- 		ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c	ft_isprint.c \
- 		ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c \
- 		ft_substr.c	ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c	\
- 		ft_putchar_fd.c	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c			
-		
-SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
- 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+RM = rm -rf
 
-OBJ = $(subst .c,.o,$(SRC))
+SRC_DIR = src
+OBJ_DIR = obj
+HEADERS = src/so_long.h
 
-OBJ_BONUS = $(subst .c,.o,$(SRC_BONUS))
+INCLUDE_DIR = includes
+
+SRC_FILES = main.c read_map.c print_map.c
+
+SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+
+CC = clang
+CFLAGS = -Wall -Wextra -Werror
+LIBFLAGS = -lft -lXext -lX11 -lmlx
 
 all: $(NAME)
 
-$(NAME):
-	@gcc -Wall -Wextra -Werror -c $(SRC)
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
+$(NAME): $(OBJ_DIR) $(LIBFT) $(MLX) $(OBJ)
+	$(CC) $(OBJ) -L$(LIBFT_DIR) -L$(MLX_DIR) $(LIBFLAGS) -o $@
 
-bonus: $(OBJ_BONUS)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
+	$(CC) $(CFLAGS) -c -I$(INCLUDE_DIR) -o $@ $<
 
-$(OBJ_BONUS):
-	@gcc -Wall -Wextra -Werror -c $(SRC) $(SRC_BONUS)
-	@ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
-	@ranlib $(NAME)
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+$(MLX):
+	make -C $(MLX_DIR)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
+
+run:
+	./so_long
+
+img:
+	convert $(IMG_DIR)/*.jpg -set filename:base "%[basename]" "%[filename:base].xpm" && mv *.xpm $(XPM_DIR)	
 
 clean:
-	@/bin/rm -f $(OBJ) $(OBJ_BONUS)
-
+	$(RM) $(OBJ)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	make -C $(MLX_DIR) clean
+	make -C $(LIBFT_DIR) fclean
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean all re bonus
+.PHONY: clean fclean all re
