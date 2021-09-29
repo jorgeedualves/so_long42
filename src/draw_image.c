@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   draw_image.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 17:03:50 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/24 18:33:25 by joeduard         ###   ########.fr       */
+/*   Created: 2021/09/27 22:42:30 by joeduard          #+#    #+#             */
+/*   Updated: 2021/09/27 22:49:52 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void init_game(t_game *game)
+void draw_image(t_game *game, void *img, int x, int y)
 {
-    game->img = 0;
-    game->mlx = 0;
-    game->win_height = 0;
-    game->win_width = 0;
+    mlx_put_image_to_window
+        (game->mlx, game->win, img, y * SPRITE_SIZE, x * SPRITE_SIZE);
 }

@@ -16,7 +16,8 @@ HEADERS = src/so_long.h
 
 INCLUDE_DIR = includes
 
-SRC_FILES = so_long.c read_map.c print_map.c map_utils.c init_game.c
+SRC_FILES = so_long.c read_map.c print_map.c map_utils.c init_window.c \
+			map_render.c draw_image.c convert_image.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
@@ -43,7 +44,7 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 run:
-	./so_long
+	./so_long "assets/maps/map.ber"
 
 img:
 	convert $(IMG_DIR)/*.jpg -set filename:base "%[basename]" "%[filename:base].xpm" && mv *.xpm $(XPM_DIR)	

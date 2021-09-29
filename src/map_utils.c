@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/24 18:33:27 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/09/24 19:04:51 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void map_counter(char **map, t_game *game)
 {
     int i;
-
 
     i = 0;
     game->win_height = 0; // altura
@@ -30,7 +29,7 @@ void map_counter(char **map, t_game *game)
 
 /*
         height = 2  width = 6
-[map
+[
    0 ["123456\0"] \n  0-6 
    1 ["789987\0"] \n' 1-6
 ]
