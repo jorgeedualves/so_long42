@@ -1,45 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   game_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 17:01:29 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/30 20:27:14 by joeduard         ###   ########.fr       */
+/*   Created: 2021/09/30 18:17:59 by joeduard          #+#    #+#             */
+/*   Updated: 2021/09/30 19:25:26 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int key_press(int keycode, t_game *game)
 {
-
-	t_game game;
-	t_param param;
-
-	if (argc == 2) 
-				   
-	{
-		game.mlx = mlx_init();
-		game.map = read_map(argv[1]);
-		map_counter(game.map, &game);
-		print_map(game.map);
-		init_window(&game);
-
-		print_map(game.map);
-
-		initialize_image(&game);
-
-		map_render(game.map, &game);
-
-		key_press(param.keycode, &game);
-
-		event_handler(&param, &game, &key_press);
-
-		mlx_loop(game.mlx);
-	}
+    player_update(keycode, game);
     return (0);
 }
 
-
+void swap_positions (char *current_pos, char *next_pos, char current_value, char next_value)
+{
+    *current_pos = next_value;
+    *next_pos = current_value;
+}

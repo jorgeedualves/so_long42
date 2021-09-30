@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:50:06 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/27 23:06:44 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/09/30 19:37:37 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void *convert_image(char *img, t_game *game)
 void initialize_image(t_game *game)
 {
     game->wall = convert_image(FILE_WALL, game);
-    game->empty_space = convert_image(FILE_EMPTY, game);
+    game->empty_space = convert_image(FILE_SPACE, game);
     game->collectible = convert_image(FILE_COLLECTIBLE, game);
     game->exit = convert_image(FILE_EXIT, game);
     game->player = convert_image(FILE_PLAYER, game);

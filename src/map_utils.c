@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/24 19:04:51 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/09/30 20:00:06 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,14 @@ void map_counter(char **map, t_game *game)
    1 ["789987\0"] \n' 1-6
 ]
 */
+
+void    print_map(char **map)
+{
+    while (*map)
+        printf("%s\n", *map++);
+}
+
+//map = jorge
+// *map  = [jorge]  
+// map[i]  = [jorge]
+// &map = [safdas]

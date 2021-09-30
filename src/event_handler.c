@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_map.c                                        :+:      :+:    :+:   */
+/*   event_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/23 18:25:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/24 19:03:23 by joeduard         ###   ########.fr       */
+/*   Created: 2021/09/30 19:45:42 by joeduard          #+#    #+#             */
+/*   Updated: 2021/09/30 19:48:13 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    print_map(char **map)
+void    event_handler(t_param *param, t_game *game, int (*f)())
 {
-    while (*map)
-        printf("%s\n", *map++);
+    mlx_hook(game->win, X_EVENT_KEY_PRESS, 1L<<0, f, &param);
 }
-
-//map = jorge
-// *map  = [jorge]  
-// map[i]  = [jorge]
-// &map = [safdas]
