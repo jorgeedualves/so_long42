@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/30 20:19:13 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/02 22:13:54 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@
 # include <X11/X.h>
 
 typedef struct s_game   t_game;
-typedef struct s_param	t_param;
 
 struct s_game
 {
@@ -44,12 +43,8 @@ struct s_game
     int		map_size;
 	int		x;
 	int		y;
+    int     moves;
     char	**map;
-};
-
-struct s_param
-{
-	int		keycode;
 };
 
 # define FILE_WALL "textures/1.xpm"
@@ -61,22 +56,29 @@ struct s_param
 
 # define X_EVENT_KEY_PRESS 2
 # define KEY_W 119
-# define KEY_D 100
 # define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+
+# define KEY_UP 65362
+# define KEY_LEFT 65361
+# define KEY_DOWN 65364
+# define KEY_RIGHT 65363
 
 //src
 void	*convert_image(char *img, t_game *game);
 void	initialize_image(t_game *game);
 void	draw_image(t_game *game, void *img, int x, int y);
 int		key_press(int keycode, t_game *game);
-void	swap_positions (char *current_pos, char *next_pos, char current_value, char next_value);
+void	swap_positions(char *current_pos, char *next_pos, char current_value, char next_value);
 char	**read_map(char *path_to_file);
 void	init_window(t_game *game);
 void	map_render(char **map, t_game *game);
 void	map_counter(char **map, t_game *game);
 void	print_map(char **map);
-void	move_right(t_game *game);
+void    move_player(t_game *game, int x, int y);
 void	event_handler(t_param *param, t_game *game, int (*f)());
-void    player_update(int keycode, t_game *game);
+void    player_update(int keycode, t_game *game, int x, int y);
+int     key_hook(int keycode, t_game *game);
 
 #endif

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_utils.c                                       :+:      :+:    :+:   */
+/*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 18:17:59 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/30 19:25:26 by joeduard         ###   ########.fr       */
+/*   Created: 2021/09/30 19:52:08 by joeduard          #+#    #+#             */
+/*   Updated: 2021/10/02 22:06:19 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+# include "so_long.h"
 
-int key_press(int keycode, t_game *game)
+void    move_player(t_game *game, int x, int y)
 {
-    player_update(keycode, game);
-    return (0);
+    int i;
+    int j;
+
+    i = game->x;
+    j = game->y;
+    
+    if(game->map[x][y] != '1')
+    {
+        swap_positions(&game->map[i][j], &game->map[x][y], 'P', '0');
+        game->x = x;
+        game->y = y;
+    }
+    print_map(game->map);
 }
 
 void swap_positions (char *current_pos, char *next_pos, char current_value, char next_value)

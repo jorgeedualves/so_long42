@@ -8,11 +8,7 @@
 ** Last update Fri Feb 23 17:10:09 2001 Charlie Root
 */
 
-
 #include	"mlx_int.h"
-
-
-
 
 int		mlx_key_hook(t_win_list *win,int (*funct)(),void *param)
 {

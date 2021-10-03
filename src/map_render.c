@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:13:51 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/27 23:08:32 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/02 20:54:15 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,13 @@ void map_render(char **map, t_game *game)
                 draw_image(game, game->exit, i, j);
 
             if (map[i][j] == 'P')
-                draw_image(game, game->player, i, j);
-            j++;    
+            {
+				draw_image(game, game->player, i, j);
+				game->x = i;
+				game->y = j;
+            }
+            j++;
+                
         }
         i++;
     }
