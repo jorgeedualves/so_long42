@@ -17,7 +17,7 @@ HEADERS = src/so_long.h
 INCLUDE_DIR = includes
 
 SRC_FILES = so_long.c read_map.c map_render.c draw_image.c init_window.c	\
-			convert_image.c map_utils.c player_update.c event_handler.c \
+			convert_image.c map_utils.c player_update.c \
 			move_player.c key_hook.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))

@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/02 22:13:54 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/02 22:49:45 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	map_render(char **map, t_game *game);
 void	map_counter(char **map, t_game *game);
 void	print_map(char **map);
 void    move_player(t_game *game, int x, int y);
-void	event_handler(t_param *param, t_game *game, int (*f)());
 void    player_update(int keycode, t_game *game, int x, int y);
 int     key_hook(int keycode, t_game *game);
 

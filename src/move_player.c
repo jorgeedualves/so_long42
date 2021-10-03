@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:52:08 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/02 22:06:19 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/03 14:08:21 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void    move_player(t_game *game, int x, int y)
         swap_positions(&game->map[i][j], &game->map[x][y], 'P', '0');
         game->x = x;
         game->y = y;
+        game->moves++;
     }
     print_map(game->map);
 }
