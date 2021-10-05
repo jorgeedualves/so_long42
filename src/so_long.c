@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:01:29 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/02 22:13:57 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/04 22:09:47 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		print_map(game.map);
 		init_window(&game);
 
-		print_map(game.map);
+	//	print_map(game.map);
 
 		initialize_image(&game);
 
