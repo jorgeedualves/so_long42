@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/09/30 20:00:06 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/05 17:19:04 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,18 @@ void map_counter(char **map, t_game *game)
         i++;
     }
     game->win_width = ft_strlen(*map);  // largura 
-    printf("Largura do Mapa: %d\n\n", game->win_width);
+    game->map_size = game->win_height *game->win_width;
 }
-
-/*
-        height = 2  width = 6
-[
-   0 ["123456\0"] \n  0-6 
-   1 ["789987\0"] \n' 1-6
-]
-*/
 
 void    print_map(char **map)
 {
-    while (*map)
-        printf("%s\n", *map++);
+    int i;
+    
+    i = 0;
+    while (map[i])
+    {
+        printf("%s\n", map[i]);
+        i++;
+    }
+    printf("\n");
 }
-
-//map = jorge
-// *map  = [jorge]  
-// map[i]  = [jorge]
-// &map = [safdas]
