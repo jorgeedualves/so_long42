@@ -1,59 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   map_ckeck.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:32:52 by joeduard         ###   ########.fr       */
+/*   Created: 2021/10/06 19:57:55 by joeduard          #+#    #+#             */
+/*   Updated: 2021/10/06 20:08:49 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_counter(char **map, t_game *game)
-{
-	int i;
-
-	i = 0;
-	game->win_height = 0;
-	while(map[i])
-	{
-		game->win_height++;
-		i++;
-	}
-	game->win_width = ft_strlen(*map);
-}
-
-void	print_map(char **map)
-{
-	int i;
-
-	i = 0;
-	while (map[i])
-	{
-		printf("%s\n", map[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-void	count_collectibles(char **map, t_game *game)
+static int	has_valid_walls(char **map, t_map *m)
 {
 	int i;
 	int j;
 
 	i = 0;
+	m->map_col_size = 0;
+	while(map[i++])
+		m->map_col_size--;
+
+	i = 0;
+	m->map_row_size = ft_strlen(*map) - 1;
 	while(map[i])
 	{
 		j = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
-			if(map[i][j] == 'C')
-				game->collectibles++;
+			if (map[0][j] != '1' ||
+				map[i][0] != '1' || map[i][m->map_row_size] != '1')
+				retur(0);
 			j++;
 		}
 		i++;
 	}
+	return(1);
+}
+
+int is_valid_map(char **map)
+{
+	t_map m;
+
+	if(has_valid_walls(map, &m))
+		return (1);
+	return (0);
 }

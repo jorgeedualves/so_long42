@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 15:01:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/05 17:16:02 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/06 19:44:24 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 int key_press(int keycode, t_game *game)
 {
     if(keycode == XK_Escape)
-    exit(0);
+        exit_game(game);
+    if(game->end_game)
+        return(0);
     player_update(keycode, game);
+    map_render(game->map, game);
+    show_info(game);
     return(0);
 }
