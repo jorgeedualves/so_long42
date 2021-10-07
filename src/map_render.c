@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 22:13:51 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:33:15 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:19:22 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,7 @@ void	map_render(char **map, t_game *game)
 			if (map[i][j] == 'P')
 				hook_p(game, i, j);
 			j++;
-
 		}
 		i++;
 	}
-}
-
-void reload_map(char **map, t_game *game)
-{
-	map_render(map, game);
 }

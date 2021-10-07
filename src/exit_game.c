@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:32:27 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:40:34 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 16:20:59 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	free_map(char **map)
 	i = 0;
 	while (map[i])
 	{
-		ft_super_free((void *)&map);
+		ft_super_free((void *)&map[i]);
 		i++;
 	}
 	ft_super_free((void *)&map);

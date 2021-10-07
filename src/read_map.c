@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:08:56 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:27:14 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:22:23 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	**read_map(char *path_to_file)
 {
-	char *line;
-	int fd;
-	char **map;
-	char *buffer;
+	char	*line;
+	int		fd;
+	char	**map;
+	char	*buffer;
 
 	fd = open(path_to_file, O_RDONLY);
 	if(fd == -1)

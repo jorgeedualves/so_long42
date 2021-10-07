@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:52:08 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:39:18 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:29:18 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static void	swap_positions (char *current_pos, char *next_pos, char current_valu
 	*next_pos = current_value;
 }
 
-static void    handle_0(t_game *game, int x, int y)
+static void	handle_0(t_game *game, int x, int y)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = game->x;
 	j = game->y;
@@ -31,10 +31,10 @@ static void    handle_0(t_game *game, int x, int y)
 	game->y = y;
 }
 
-static void handle_c(t_game *game, int x, int y)
+static void	handle_c(t_game *game, int x, int y)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = game->x;
 	j = game->y;

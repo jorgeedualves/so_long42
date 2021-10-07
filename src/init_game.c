@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:49:56 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:39:10 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 16:45:04 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	initialize_mlx(t_game *game)
 	game->mlx = mlx_init();
 }
 
-static void	inicialize_data(t_game *game)
+static void	initialize_data(t_game *game)
 {
 	map_counter(game->map, game);
 	count_collectibles(game->map, game);

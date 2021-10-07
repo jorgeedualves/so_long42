@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   map_check_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/15 17:01:29 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:42:59 by joeduard         ###   ########.fr       */
+/*   Created: 2021/10/07 17:17:49 by joeduard          #+#    #+#             */
+/*   Updated: 2021/10/07 17:18:41 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+void map_check_init(t_map *map)
 {
-
-	t_game game;
-	
-	if (argc == 2) 
-	{
-		game.map = read_map(argv[1]);
-		if(is_valid_map(game.map, argv[1]))
-		{
-			init_game(&game);
-			event_handler(&game);
-			mlx_loop(game.mlx);
-		}
-		else
-		{
-			printf("Error\n This map is not valid!");
-			free_map(game.map);
-			exit(0);
-		}
-	}
-	else
-	{
-		printf("No map specified!");
-		exit(0);
-	}
+	map->collectible = 0;
+	map->exit = 0;
+	map->player = 0;
+	map->map_row_size = 0;
+	map->map_col_size = 0;
 }

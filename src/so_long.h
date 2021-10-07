@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:14:50 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:39:40 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,40 +24,43 @@
 # include <X11/keysymdef.h>
 # include <X11/X.h>
 
-typedef struct s_game   t_game;
+typedef struct s_game	t_game;
 typedef struct s_map	t_map;
 
-struct s_map
+struct	s_map
 {
-	int map_row_size;
-	int map_col_size;
+	int	map_row_size;
+	int	map_col_size;
+	int	player;
+	int	exit;
+	int	collectible;
 };
 
-struct s_game
+struct	s_game
 {
-	void    *img;
-	void    *mlx;
-	void    *wall;
-	void    *empty_space;
-	void    *collectible;
-	void    *player_r;
-	void    *player_l;
-	void    *player_u;
-	void    *player_d;
-	void    *exit;
-	void    *win;
-	char    **map;
-	int     img_width;
-	int     img_height;
-	int     win_height;
-	int     win_width;
-	int     x;
-	int     y;
-	int     moves;
-	int     collected;
-	int     collectibles;
-	int     player_direction;
-	int     end_game;
+	void	*img;
+	void	*mlx;
+	void	*wall;
+	void	*empty_space;
+	void	*collectible;
+	void	*player_r;
+	void	*player_l;
+	void	*player_u;
+	void	*player_d;
+	void	*exit;
+	void	*win;
+	char	**map;
+	int		img_width;
+	int		img_height;
+	int		win_height;
+	int		win_width;
+	int		x;
+	int		y;
+	int		moves;
+	int		collected;
+	int		collectibles;
+	int		player_direction;
+	int		end_game;
 };
 
 # define FILE_WALL "textures/1.xpm"
@@ -83,23 +86,25 @@ struct s_game
 # define KEY_DOWN 65364
 # define KEY_RIGHT 65363
 
-void    init_game(t_game *game);
-char    **read_map(char *path_to_file);
-void    print_map (char **map);
-void    map_counter (char **map, t_game *game);
-void    map_render(char **map, t_game *game);
+void	init_game(t_game *game);
+char	**read_map(char *path_to_file);
+void	print_map (char **map);
+void	map_counter (char **map, t_game *game);
+void	map_render(char **map, t_game *game);
 void	player_update(int keycode, t_game *game);
-void    event_handler(t_game *game);
-void    initialize_image(t_game *game);
-void    draw_image(t_game *game, void *img, int x, int y);
-void    init_window(t_game *game);
-int     key_press(int keycode, t_game *game);
-void    handle_situation(t_game *game, int x, int y);
-void    show_info(t_game *game);
-void    hook_p (t_game *game, int i, int j);
-void    count_collectibles(char **map, t_game *game);
-int     exit_game(t_game *game);
+void	event_handler(t_game *game);
+void	initialize_image(t_game *game);
+void	draw_image(t_game *game, void *img, int x, int y);
+void	init_window(t_game *game);
+int		key_press(int keycode, t_game *game);
+void	handle_situation(t_game *game, int x, int y);
+void	show_info(t_game *game);
+void	hook_p (t_game *game, int i, int j);
+void	count_collectibles(char **map, t_game *game);
+int		exit_game(t_game *game);
 void	free_map(char **map);
-int     is_valid_map(char **map);
+int		is_valid_map(char **map, char *file);
+void	map_check_init(t_map *map);
+
 
 #endif
