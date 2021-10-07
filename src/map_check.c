@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_ckeck.c                                        :+:      :+:    :+:   */
+/*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:57:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:15:58 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 19:28:27 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	has_valid_walls(char **map, t_map *m)
+int	has_valid_walls(char **map, t_map *m)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	while (map[m->map_col_size])
 		m->map_col_size++;
@@ -25,47 +25,47 @@ static int	has_valid_walls(char **map, t_map *m)
 	while(map[i])
 	{
 		j = 0;
-		while (map[i][j])
+		while(map[i][j])
 		{
-			if (map[0][j] != '1' ||
+			if (map[0][j] != '1' || 
 				map[i][0] != '1' || map[i][m->map_row_size] != '1'
 				|| map[m->map_col_size][j] != '1')
-				return(0);
+					return (0);
 			j++;
 		}
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
-static int has_valid_chars(char **map)
+int	has_valid_chars(char **map)
 {
-    int  i;
-    int  j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while(map[i])
-    {
-        j = 0;
-        while(map[i][j])
-        {   
-           if (map[i][j] != '1' && map[i][j] != '0' 
-            && map[i][j] != 'P' && map[i][j] != 'C' 
-            && map[i][j] != 'E')
-                return (0);
-            j++;
-        }
-        i++;
-    }
-    return (1);
+	i = 0;
+	while(map[i])
+	{
+		j = 0;
+		while(map[i][j])
+		{
+			if (map[i][j] != '1' && map[i][j] != '0' 
+			&& map[i][j] != 'P' && map[i][j] != 'C' 
+			&& map[i][j] != 'E')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
-static int has_minimum_chars(char **map, t_map *m)
+int	has_minimum_chars(char **map, t_map *m)
 {
-    int  i;
-	int  j;
+	int	i;
+	int	j;
 
-    i = 0;
+	i = 0;
 	while(map[i])
 	{
 		j = 0;
@@ -79,7 +79,7 @@ static int has_minimum_chars(char **map, t_map *m)
 				m->exit++;
 			if (m->collectible > 0 
 				&& m->exit > 0 && m->player > 0)
-			return (1);
+				return (1);
 			j++;
 		}
 		i++;
@@ -87,10 +87,10 @@ static int has_minimum_chars(char **map, t_map *m)
 	return (0);
 }
 
-static int is_rectangular(char **map)
+int	is_rectangular(char **map)
 {
-	int i;
-	size_t line_size;
+	int	i;
+	size_t	line_size;
 
 	i = 0;
 	line_size = ft_strlen(*map);
@@ -100,7 +100,7 @@ static int is_rectangular(char **map)
 	return (1);
 }
 
-static int has_valid_extension(char *file)
+int	has_valid_extension(char *file)
 {	
 	char *ext;
 
@@ -110,18 +110,4 @@ static int has_valid_extension(char *file)
 	if (ft_strncmp(ext, ".ber", 5))
 		return (0);
 	return (1);
-}
-
-int is_valid_map(char **map, char *file)
-{
-	t_map m;
-
-	if(!map)
-		return (0);
-	map_check_init(&m);
-	if (has_valid_walls(map, &m) && has_valid_chars(map) 
-	&& has_minimum_chars(map, &m) && is_rectangular(map) 
-	&& has_valid_extension(file))
-		return (1);
-	return (0);
 }

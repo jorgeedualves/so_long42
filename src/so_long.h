@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:39:40 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/07 19:20:03 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,10 @@ int		exit_game(t_game *game);
 void	free_map(char **map);
 int		is_valid_map(char **map, char *file);
 void	map_check_init(t_map *map);
-
+int		has_valid_walls(char **map, t_map *m);
+int		has_valid_chars(char **map);
+int		has_minimum_chars(char **map, t_map *m);
+int		is_rectangular(char **map);
+int		has_valid_extension(char *file);
 
 #endif
