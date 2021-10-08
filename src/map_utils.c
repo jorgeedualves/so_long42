@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:32:52 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 20:08:39 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	map_counter(char **map, t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	game->win_height = 0;
-	while(map[i])
+	while (map[i])
 	{
 		game->win_height++;
 		i++;
@@ -28,7 +28,7 @@ void	map_counter(char **map, t_game *game)
 
 void	print_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map[i])
@@ -41,16 +41,16 @@ void	print_map(char **map)
 
 void	count_collectibles(char **map, t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while(map[i])
+	while (map[i])
 	{
 		j = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
-			if(map[i][j] == 'C')
+			if (map[i][j] == 'C')
 				game->collectibles++;
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:32:27 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 16:20:59 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:54:42 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	free_map(char **map)
 {
-	int i;
+	int	i;
 
 	if (!map)
-		return;
+		return ;
 	i = 0;
 	while (map[i])
 	{
@@ -27,7 +27,7 @@ void	free_map(char **map)
 	ft_super_free((void *)&map);
 }
 
-static void free_game(t_game *game)
+static void	free_game(t_game *game)
 {
 	mlx_destroy_image(game->mlx, game->empty_space);
 	mlx_destroy_image(game->mlx, game->wall);
@@ -42,7 +42,7 @@ static void free_game(t_game *game)
 	ft_super_free(&game->mlx);
 }
 
-int exit_game(t_game *game)
+int	exit_game(t_game *game)
 {
 	free_map(game->map);
 	free_game(game);

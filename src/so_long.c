@@ -6,21 +6,20 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/15 17:01:29 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:42:59 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 20:13:17 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
+	t_game	game;
 
-	t_game game;
-	
-	if (argc == 2) 
+	if (argc == 2)
 	{
 		game.map = read_map(argv[1]);
-		if(is_valid_map(game.map, argv[1]))
+		if (is_valid_map(game.map, argv[1]))
 		{
 			init_game(&game);
 			event_handler(&game);

@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 19:20:03 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 20:14:35 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ struct	s_game
 
 void	init_game(t_game *game);
 char	**read_map(char *path_to_file);
-void	print_map (char **map);
-void	map_counter (char **map, t_game *game);
+void	print_map(char **map);
+void	map_counter(char **map, t_game *game);
 void	map_render(char **map, t_game *game);
 void	player_update(int keycode, t_game *game);
 void	event_handler(t_game *game);
@@ -99,7 +99,7 @@ void	init_window(t_game *game);
 int		key_press(int keycode, t_game *game);
 void	handle_situation(t_game *game, int x, int y);
 void	show_info(t_game *game);
-void	hook_p (t_game *game, int i, int j);
+void	hook_p(t_game *game, int i, int j);
 void	count_collectibles(char **map, t_game *game);
 int		exit_game(t_game *game);
 void	free_map(char **map);

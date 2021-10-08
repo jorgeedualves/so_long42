@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:49:56 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 16:45:04 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:58:46 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	initialize_data(t_game *game)
 	map_counter(game->map, game);
 	count_collectibles(game->map, game);
 	game->moves = 0;
-	game-> collected = 0;
-	game-> end_game = 0;
+	game->collected = 0;
+	game->end_game = 0;
 }
 
 static void	initialize_rendering(t_game *game)

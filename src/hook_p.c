@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:42:04 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 00:39:01 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 19:57:40 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	hook_p (t_game *game, int i, int j)
+void	hook_p(t_game *game, int i, int j)
 {
 	draw_image(game, game->player_r, i, j);
 	if (game->player_direction == 'u')
@@ -24,5 +24,5 @@ void	hook_p (t_game *game, int i, int j)
 	if (game->player_direction == 'r')
 		draw_image(game, game->player_r, i, j);
 	game->x = i;
-	game->y = j; 
+	game->y = j;
 }

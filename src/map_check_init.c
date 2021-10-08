@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 17:17:49 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:18:41 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 20:00:55 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void map_check_init(t_map *map)
+void	map_check_init(t_map *map)
 {
 	map->collectible = 0;
 	map->exit = 0;

@@ -6,13 +6,14 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:52:08 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/07 17:29:18 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/08 20:10:09 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	swap_positions (char *current_pos, char *next_pos, char current_value, char next_value)
+static void	swap_positions(char *current_pos, char *next_pos,
+							char current_value, char next_value)
 {
 	*current_pos = next_value;
 	*next_pos = current_value;
@@ -47,8 +48,8 @@ static void	handle_c(t_game *game, int x, int y)
 
 static void	handle_e(t_game *game, int x, int y)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = game->x;
 	j = game->y;
