@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/09 10:10:33 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/10 19:06:21 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ struct	s_map
 	int	map_col_size;
 	int	player;
 	int	exit;
+	int	space;
 	int	collectible;
 };
 

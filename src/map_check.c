@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:57:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/09 10:09:14 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/10 19:07:22 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ int	has_minimum_chars(char **map, t_map *m)
 				m->collectible++;
 			if (map[i][j] == 'E')
 				m->exit++;
+			if (map[i][j] == '0')
+				m->space++;
 			if (m->collectible > 0
-				&& m->exit > 0 && m->player > 0)
+				&& m->exit > 0 && m->player > 0 && m->space)
 				return (1);
 			j++;
 		}
