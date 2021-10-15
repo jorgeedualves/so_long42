@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/15 03:54:32 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:23:25 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,8 @@ struct s_map
 # define FILE_PLAYER_R	"textures/P_R.xpm"
 # define FILE_PLAYER_DEAD	"textures/P_DEAD.xpm"
 # define FILE_COLLECTIBLE_1	"textures/C.xpm"
-# define FILE_COLLECTIBLE_2	"textures/C.xpm"
-# define FILE_COLLECTIBLE_3	"textures/C.xpm"
+# define FILE_COLLECTIBLE_2	"textures/C_2.xpm"
+# define FILE_COLLECTIBLE_3	"textures/C_3.xpm"
 # define FILE_COLLECTIBLE_4	"textures/C.xpm"
 # define FILE_COLLECTIBLE_5	"textures/C.xpm"
 # define FILE_ENEMY_W "textures/E_W.xpm"
@@ -105,7 +105,7 @@ struct s_map
 # define KEY_DOWN	65364
 # define KEY_RIGHT	65363
 
-# define ANIMATION_SPEED 1000
+# define ANIMATION_SPEED 4000
 # define GAME_SPEED	3000
 
 void	init_game(t_game *game);
