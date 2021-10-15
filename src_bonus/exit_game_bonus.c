@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:32:27 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/15 02:51:11 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 04:41:03 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,3 @@ int	exit_game(t_game *game)
 	exit(0);
 	return (0);
 }
-
