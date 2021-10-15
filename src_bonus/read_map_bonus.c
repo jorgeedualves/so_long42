@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 18:08:56 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/13 17:51:08 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 03:00:07 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,28 @@
 
 char	**read_map(char *path_to_file)
 {
-	char	*line;
 	int		fd;
-	char	**map;
+	char	*line;
 	char	*buffer;
+	char	*tmp;
+	char	**map;
 
 	fd = open(path_to_file, O_RDONLY);
 	if (fd == -1)
-	{
-		ft_putstr_fd("Mapa não pode ser lido", fd);
 		return (NULL);
-	}
 	buffer = ft_strdup("");
-	while (ft_get_next_line(fd, &line))
+	while (1)
 	{
-		buffer = ft_strjoin(buffer, line);
-		buffer = ft_strjoin(buffer, "\n");
+		line = get_next_line(fd);
+		if (!line)
+			break ;
+		tmp = buffer;
+		buffer = ft_strjoin(tmp, line);
+		ft_super_free((void *)&tmp);
 		ft_super_free((void *)&line);
 	}
-	buffer = ft_strjoin(buffer, line);
 	map = ft_split(buffer, '\n');
 	ft_super_free((void *)&buffer);
-	ft_super_free((void *)&line);
 	close(fd);
 	return (map);
 }

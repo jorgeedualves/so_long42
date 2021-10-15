@@ -1,58 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_utils.c                                        :+:      :+:    :+:   */
+/*   enemy_init_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/15 04:28:51 by joeduard         ###   ########.fr       */
+/*   Created: 2021/10/15 02:47:52 by joeduard          #+#    #+#             */
+/*   Updated: 2021/10/15 02:48:06 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
-void	map_counter(char **map, t_game *game)
+static void	place_enemy(char **map, int i, int j)
 {
-	int	i;
-
-	i = 0;
-	game->win_height = 0;
-	while (map[i])
-	{
-		game->win_height++;
-		i++;
-	}
-	game->win_width = ft_strlen(*map);
+	if (map[i - 1][j] == '0')
+		map[i - 1][j] = 'k';
+	else if (map[i + 1][j] == '0')
+		map[i + 1][j] = 'k';
+	else if (map[i][j - 1] == '0')
+		map[i][j - 1] = 'k';
+	else if (map[i][j + 1] == '0')
+		map[i][j + 1] = 'k';
+	else
+		return ;
 }
 
-void	print_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
-	{
-		printf("%s\n", map[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-void	count_collectibles(char **map, t_game *game)
+void	enemy_init(t_game *game)
 {
 	int	i;
 	int	j;
 
-	game->collectibles = 0;
 	i = 0;
-	while (map[i])
+	while (game->map[i])
 	{
 		j = 0;
-		while (map[i][j])
+		while (game->map[i][j])
 		{
-			if (map[i][j] == 'C')
-				game->collectibles++;
+			if (game->map[i][j] == 'C')
+				place_enemy(game->map, i, j);
 			j++;
 		}
 		i++;

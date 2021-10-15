@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:57:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/13 17:51:08 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 02:57:02 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	has_valid_walls(char **map, t_map *m)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[0][j] != '1' || map[i][0] != '1' ||
-				map[i][m->map_row_size] != '1' ||
-				map[m->map_col_size][j] != '1')
+			if (map[0][j] != '1' ||
+				map[i][0] != '1' || map[i][m->map_row_size] != '1'
+				|| map[m->map_col_size][j] != '1')
 				return (0);
 			j++;
 		}
@@ -80,7 +80,7 @@ int	has_minimum_chars(char **map, t_map *m)
 			if (map[i][j] == '0')
 				m->space++;
 			if (m->collectible > 0
-				&& m->exit > 0 && m->player > 0 && m->space)
+				&& m->exit > 0 && m->player > 0 && m->space > 0)
 				return (1);
 			j++;
 		}
@@ -91,8 +91,8 @@ int	has_minimum_chars(char **map, t_map *m)
 
 int	is_rectangular(char **map)
 {
-	int		i;
-	size_t	line_size;
+	int			i;
+	size_t		line_size;
 
 	i = 0;
 	line_size = ft_strlen(*map);
@@ -103,7 +103,7 @@ int	is_rectangular(char **map)
 }
 
 int	has_valid_extension(char *file)
-{	
+{
 	char	*ext;
 
 	if (!file)

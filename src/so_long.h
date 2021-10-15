@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 16:03:22 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/10 19:06:21 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 04:30:50 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
-# include <math.h>
 # include "../libraries/mlx_linux/mlx.h"
 # include "../libraries/libft/libft.h"
 
@@ -26,16 +25,6 @@
 
 typedef struct s_game	t_game;
 typedef struct s_map	t_map;
-
-struct	s_map
-{
-	int	map_row_size;
-	int	map_col_size;
-	int	player;
-	int	exit;
-	int	space;
-	int	collectible;
-};
 
 struct	s_game
 {
@@ -64,28 +53,38 @@ struct	s_game
 	int		end_game;
 };
 
-# define FILE_WALL "textures/1.xpm"
-# define FILE_SPACE "textures/0.xpm"
-# define FILE_COLLECTIBLE "textures/C.xpm"
-# define FILE_EXIT "textures/E.xpm"
-# define FILE_PLAYER_U "textures/P_U.xpm"
-# define FILE_PLAYER_D "textures/P_D.xpm"
-# define FILE_PLAYER_L "textures/P_L.xpm"
-# define FILE_PLAYER_R "textures/P_R.xpm"
+struct s_map
+{
+	int	map_row_size;
+	int	map_col_size;
+	int	player;
+	int	exit;
+	int	collectible;
+	int	space;
+};
+
+# define FILE_WALL	"textures/1.xpm"
+# define FILE_SPACE	"textures/0.xpm"
+# define FILE_COLLECTIBLE	"textures/C.xpm"
+# define FILE_EXIT	"textures/E.xpm"
+# define FILE_PLAYER_U	"textures/P_U.xpm"
+# define FILE_PLAYER_D	"textures/P_D.xpm"
+# define FILE_PLAYER_L	"textures/P_L.xpm"
+# define FILE_PLAYER_R	"textures/P_R.xpm"
 
 # define SPRITE_SIZE	32
 
-# define X_EVENT_KEY_PRESS 2
-# define X_EVENT_DESTROY_NOTIFY 17
-# define KEY_W 119
-# define KEY_A 97
-# define KEY_S 115
-# define KEY_D 100
+# define X_EVENT_KEY_PRESS	2
+# define X_EVENT_DESTROY_NOTIFY	17
+# define KEY_W	119
+# define KEY_A	97
+# define KEY_S	115
+# define KEY_D	100
 
-# define KEY_UP 65362
-# define KEY_LEFT 65361
-# define KEY_DOWN 65364
-# define KEY_RIGHT 65363
+# define KEY_UP		65362
+# define KEY_LEFT	65361
+# define KEY_DOWN	65364
+# define KEY_RIGHT	65363
 
 void	init_game(t_game *game);
 char	**read_map(char *path_to_file);
@@ -111,5 +110,5 @@ int		has_valid_chars(char **map);
 int		has_minimum_chars(char **map, t_map *m);
 int		is_rectangular(char **map);
 int		has_valid_extension(char *file);
-
+char	*get_next_line(int fd);
 #endif

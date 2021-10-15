@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 14:42:04 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/13 17:51:08 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 04:01:44 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	hook_p(t_game *game, int i, int j)
 {
-	draw_image(game, game->player_r, i, j);
+	draw_image(game, game->player_d, i, j);
 	if (game->player_direction == 'u')
 		draw_image(game, game->player_u, i, j);
 	if (game->player_direction == 'd')
@@ -23,6 +23,8 @@ void	hook_p(t_game *game, int i, int j)
 		draw_image(game, game->player_l, i, j);
 	if (game->player_direction == 'r')
 		draw_image(game, game->player_r, i, j);
+	if (game->player_direction == 'm')
+		draw_image(game, game->player_dead, i, j);
 	game->x = i;
 	game->y = j;
 }

@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/24 16:18:33 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/13 17:51:08 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 02:58:33 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	print_map(char **map)
 	int	i;
 
 	i = 0;
+	printf("\n");
 	while (map[i])
 	{
 		printf("%s\n", map[i]);
@@ -44,6 +45,7 @@ void	count_collectibles(char **map, t_game *game)
 	int	i;
 	int	j;
 
+	game->collectibles = 0;
 	i = 0;
 	while (map[i])
 	{
