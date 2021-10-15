@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 14:12:07 by joeduard          #+#    #+#             */
-/*   Updated: 2021/05/28 14:12:07 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:01:10 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
 
-int	ft_atoi (const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sig;

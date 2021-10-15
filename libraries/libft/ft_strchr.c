@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/26 23:14:40 by joeduard          #+#    #+#             */
-/*   Updated: 2021/05/26 23:14:40 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 16:55:42 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr (const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0' && *s != (c % 256))
 		s++;

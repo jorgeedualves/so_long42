@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/01 22:03:48 by joeduard          #+#    #+#             */
-/*   Updated: 2021/06/01 22:03:48 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:02:38 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words (const char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	i;
 	int	n_word;
@@ -35,7 +35,7 @@ static int	count_words (const char *s, char c)
 	return (n_word);
 }
 
-static char	*string (const char *s, int init, int end)
+static char	*string(const char *s, int init, int end)
 {
 	char	*string;
 	int		len;
@@ -52,7 +52,7 @@ static char	*string (const char *s, int init, int end)
 	return (string);
 }
 
-char	**ft_split (char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		init_w;

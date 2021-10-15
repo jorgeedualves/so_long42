@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 19:57:53 by joeduard          #+#    #+#             */
-/*   Updated: 2021/06/08 19:57:53 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 16:58:09 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_charcmp (char c, char const *set)
+static int	ft_charcmp(char c, char const *set)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ static int	ft_charcmp (char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim (char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
 	size_t	i;

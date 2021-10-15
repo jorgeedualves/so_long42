@@ -6,13 +6,13 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 23:22:46 by joeduard          #+#    #+#             */
-/*   Updated: 2021/06/04 23:22:46 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:00:13 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len (int num)
+int	ft_len(int num)
 {
 	size_t	len;
 
@@ -28,7 +28,7 @@ int	ft_len (int num)
 	return (len);
 }
 
-int	ft_to_positive (int num)
+int	ft_to_positive(int num)
 {
 	if (num < 0)
 		return (-num);
@@ -36,7 +36,7 @@ int	ft_to_positive (int num)
 		return (num);
 }
 
-char	*ft_itoa (int n)
+char	*ft_itoa(int n)
 {
 	int		sign;
 	int		len;

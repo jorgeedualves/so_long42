@@ -6,11 +6,11 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/28 20:31:27 by joeduard          #+#    #+#             */
-/*   Updated: 2021/05/28 20:31:27 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/14 16:49:08 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower (int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + ('a' - 'A'));
