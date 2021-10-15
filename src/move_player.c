@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:52:08 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/09 10:09:48 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 16:17:46 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ static void	handle_e(t_game *game, int x, int y)
 	{
 		swap_positions(&game->map[i][j], &game->map[x][y], 'E', '0');
 		game->moves++;
+		game->end_game = 1;
 		game->x = x;
 		game->y = y;
 	}

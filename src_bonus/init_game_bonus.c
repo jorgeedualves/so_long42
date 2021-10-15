@@ -6,7 +6,7 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:49:56 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/15 04:11:21 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:30:32 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	initialize_data(t_game *game)
 	game->loops = 0;
 	game->animations = 0;
 	game->i = 0;
-	game->player_direction = 's';
+	game->player_direction = 'r';
 }
 
 static void	initialize_rendering(t_game *game)

@@ -6,21 +6,21 @@
 /*   By: joeduard <joeduard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 19:57:55 by joeduard          #+#    #+#             */
-/*   Updated: 2021/10/10 19:07:22 by joeduard         ###   ########.fr       */
+/*   Updated: 2021/10/15 20:02:02 by joeduard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	has_valid_walls(char **map, t_map *m)
+int	has_valid_walls(char **map, t_map *mp)
 {
 	int	i;
 	int	j;
 
-	while (map[m->map_col_size])
-		m->map_col_size++;
-	m->map_col_size--;
-	m->map_row_size = ft_strlen(*map) - 1;
+	while (map[mp->map_col_size])
+		mp->map_col_size++;
+	mp->map_col_size--;
+	mp->map_row_size = ft_strlen(*map) - 1;
 	i = 0;
 	while (map[i])
 	{
@@ -28,8 +28,8 @@ int	has_valid_walls(char **map, t_map *m)
 		while (map[i][j])
 		{
 			if (map[0][j] != '1' || map[i][0] != '1' ||
-				map[i][m->map_row_size] != '1' ||
-				map[m->map_col_size][j] != '1')
+				map[i][mp->map_row_size] != '1' ||
+				map[mp->map_col_size][j] != '1')
 				return (0);
 			j++;
 		}
