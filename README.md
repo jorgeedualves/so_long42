@@ -7,23 +7,28 @@ This project aims to introduce Minilibx, to create a 2d game.  It is possible to
 The aim of this project is to code a 2D Game :D <br>
 ## Use:
 🚧
-Build project functions:<br/>
+Build functions and project Execution:<br/>
 ```
-42Libft $ make
+so_long42 $ make && make run
+```
+🚧
+Build functions and project Execution part bonus:<br/>
+```
+so_long42 $ make bonus && make runb
 ```
 🚿
 Clean Obj files:<br/>
 ```
-42Libft $ make clean
+so_long42 $ make clean
 ```
 🚿 🚿
 Clean All (obj files + binary):<br/>
 ```
-42Libft $ make fclean
+so_long42 $ make fclean
 ```
 🚿 🚧
 Clean All + build:<br/>
 ```
-42Libft $ make re
+so_long42 $ make re
 ```
 <br/>See Makefile
