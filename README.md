@@ -5,11 +5,11 @@ This project aims to introduce Minilibx, to create a 2d game.  It is possible to
 
 ## Gameplay
 
-<img src="/home/jorge/Documentos/42SP/so_long42/assets/img/so_long42.gif">
+<img src="so_long42/assets/img/so_long42.gif">
 
 ## Badge
 
-<img src="/home/jorge/Documentos/42SP/so_long42/assets/img/so_longm.png">
+<img src="so_long42/assets/img/so_longm.png">
 
 ## Skills
 
@@ -18,7 +18,7 @@ This project aims to introduce Minilibx, to create a 2d game.  It is possible to
 
 ## My grade
 
-<img src="/home/jorge/Documentos/42SP/so_long42/assets/img/score_so_long.png">
+<img src="so_long42/assets/img/score_so_long.png">
 
 # 42-so_long
 The aim of this project is to code a 2D Game :D <br>
