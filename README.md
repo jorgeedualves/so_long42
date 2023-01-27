@@ -20,8 +20,13 @@ This project aims to introduce Minilibx, to create a 2d game.  It is possible to
 
 <img src="/assets/img/score_so_long.png">
 
+## Flowchat:
+<img src="img/so_long - Frame 1.jpg">
+<img src="img/so_long - Frame 2.jpg">
+
 # 42-so_long
 The aim of this project is to code a 2D Game :D <br>
+
 ## Use:
 🚧
 Build functions and project Execution:<br/>
